@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicina Tradicional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Medicina Tradicional</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="plantas.html">Plantas</a></li>
+            <li><a href="cuentas.html">Cuentas</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section>
+        <h2>Bienvenido a la Medicina Tradicional</h2>
+        <p>Información sobre plantas medicinales, sus beneficios y usos.</p>
+    </section>
+
+    <!-- Carrusel de imágenes -->
+    <div id="theCarousel" class="carousel">
+        <img src="imagenes/imagen1.jpg" alt="Achiote">
+        <img src="imagenes/imagen2.jpg" alt="Manzanilla" style="display:none">
+        <img src="imagenes/imagen3.jpg" alt="Uña de Gato" style="display:none">
+        <img src="imagenes/imagen4.jpg" alt="Eucalipto" style="display:none">
+        <button class="left" onclick="prevImage()">&#10094;</button>
+        <button class="right" onclick="nextImage()">&#10095;</button>
+        <div class="carousel-dots">
+            <span class="active" onclick="currentSlide(1)"></span>
+            <span onclick="currentSlide(2)"></span>
+            <span onclick="currentSlide(3)"></span>
+            <span onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Medicina Tradicional</p>
+</footer>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+        let slides = document.querySelectorAll('.carousel img');
+        let dots = document.querySelectorAll('.carousel-dots span');
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+    function nextImage() {
+        showSlides(slideIndex += 1);
+    }
+
+    function prevImage() {
+        showSlides(slideIndex -= 1);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+</script>
+</body>
+</html>

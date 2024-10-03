@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cuentas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Medicina Tradicional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="plantas.html">Plantas</a></li>
+                <li><a href="cuentas.html">Cuentas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Gestión de Cuentas</h2>
+            <form id="add-account-form">
+                <h3>Agregar Cuenta</h3>
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <button type="submit">Agregar</button>
+            </form>
+            <form id="delete-account-form">
+                <h3>Eliminar Cuenta</h3>
+                <label for="del-username">Nombre de Usuario:</label>
+                <input type="text" id="del-username" name="del-username" required>
+                <button type="submit">Eliminar</button>
+            </form>
+            <h3>Lista de Cuentas</h3>
+            <ul id="account-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Medicina Tradicional</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
