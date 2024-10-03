@@ -10,31 +10,55 @@ body {
 }
 
 header {
-    background: #333;
+    background: url('imagenes/background.jpg') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-blend-mode: overlay; /* Blend the overlay with the background image */
     color: #fff;
-    padding: 10px 0;
+    height: 150px;
+    position: relative;
     text-align: center;
+    padding: 10px 0;
+}
+
+.header-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
-    border: none;
+    margin: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+nav ul li a:hover,
+nav ul li a.active {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
 }
 
 main {
@@ -88,19 +112,19 @@ ul li {
 
 .plant {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Aligns items vertically in the center */
     margin-bottom: 20px;
 }
 
 .plant img {
-    width: 300px; /* Ancho fijo */
-    height: 300px; /* Alto fijo */
-    object-fit: cover; /* Recorta la imagen para que encaje en las dimensiones especificadas */
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Crop the image to fit the specified dimensions */
     margin-right: 20px;
-    float: left;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra difuminada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
 }
+
 
 .plant h3 {
     font-size: 2rem; /* Incrementa el tamaño del nombre de la planta */
@@ -163,4 +187,17 @@ ul li {
 
 .carousel-dots .active {
     background-color: #717171;
+}
+
+form {
+    width: 50%; /* Ajusta el ancho del formulario según tus necesidades */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px; /* Añade un poco de padding para mejor apariencia */
+    background-color: #fff; /* Opcional: añade un fondo blanco para resaltar el formulario */
+    border-radius: 8px; /* Opcional: añade bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: añade una sombra para darle profundidad */
+}
+
+section {
+    margin: 20px; /* Puedes ajustar el valor del margen según tus necesidades */
 }

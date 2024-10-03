@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteAccountForm = document.getElementById('delete-account-form');
     const accountList = document.getElementById('account-list');
 
+    // Agregar cuentas
+    const fakeAccounts = ['Andres', 'Iver', 'Maria'];
+    fakeAccounts.forEach(account => {
+        const li = document.createElement('li');
+        li.textContent = account;
+        accountList.appendChild(li);
+    });
+
     addAccountForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const username = document.getElementById('username').value.trim();
